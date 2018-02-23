@@ -1,25 +1,18 @@
 #ifndef MACLASSE_H
 #define MACLASSE_H
-#include<string>
-//  using namespace std; 不在头文件中使用，而是std::          
-class Pays {
+
+class Point {
 public:
     //constructeur
-    Pays(const std::string& nom = "", double population = 0., unsigned superficie = 0);
-    //Sélecteurs
-    std::string getNom() const;
-    double getPopulation()const;
-    unsigned getSuerficie() const;
-    //Modificateurs
-    void setNom(const std::string& nom);
-    void setPopulation(double population);
-    void setSuperficie(unsigned superficie);
-    //Autre
-    double densitePopulation()const;
+    Point(float x = 0.f, float y = 0.f);
+    //modificateur
+    void deplacer(float dx, float dy);
+    //sélecteur
+    float abcisse() const;
+    float ordonnee() const;
 private:
-    std::string nom; //nom du pays
-    double population; //en mio d'habitants
-    unsigned superficie; //en km2
+    float x;
+    float y;
 };
 
 #endif /* MACLASSE_H */
